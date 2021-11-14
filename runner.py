@@ -60,8 +60,8 @@ packets, follow the shortest path rather than following a direct edge between no
 required to be complete.''')
 parser.add_boolean('--network-loops', dest='network_loops', default=True,
                    help='Set to true if we should have auto self loops')
-parser.add_boolean('--simulator', dest="simulator", default="process", help='The simulator to simulate the network with'
-                                                                            'options: shadow, process')
+parser.add_argument('--simulator', dest="simulator", default="process", help='The simulator to simulate the network '
+                                                                             'with options: shadow, process')
 args = parser.parse_args()
 
 
