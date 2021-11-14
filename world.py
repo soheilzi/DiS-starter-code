@@ -17,6 +17,7 @@ parser.add_argument('--simulate-network-parameters', dest='simulate_network_para
 args = parser.parse_args()
 
 SEPARATOR = "###$$###"
+HELLO_MSG = 'hello'
 PIKA_CON_PARAMETERS = {}
 
 
@@ -131,7 +132,7 @@ class SimulatorFullView(AbstractWorld):
 
     def send_hello(self):
         for n in self._world_map.nodes:
-            self.send_message(n, 'Hello')
+            self.send_message(n, HELLO_MSG)
 
     @property
     def neighbors(self) -> list:
@@ -162,7 +163,7 @@ class SimulatorOnlyNeighbors(SimulatorFullView):
 
     def send_hello(self):
         for n in self.neighbors:
-            self.send_message(n, 'Hello')
+            self.send_message(n, HELLO_MSG)
 
     def send_message(self, to, msg):
         if to not in self.neighbors and to != self.current_node:
