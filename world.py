@@ -156,6 +156,7 @@ class SimulatorFullView(AbstractWorld):
             self.current_node = args.force_node
 
         self._world_map = nx.read_gml(args.network_gml)
+        self.network_size = len(self._world_map.nodes)
 
 
 class SimulatorOnlyNeighbors(SimulatorFullView):
@@ -172,6 +173,13 @@ class SimulatorOnlyNeighbors(SimulatorFullView):
 
     def __init__(self):
         super().__init__()
+        self.active = True
+        self.ID = random.choices(range(1, self.network_size + 1))[0]
+        self.leaderID = self.ID
+        self.round = 0
+        self.parent = None
+        self.children = self.neighbors
+        self.subtree_size = 0
 
 
 world = AbstractWorld.get_instance()

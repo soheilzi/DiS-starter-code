@@ -1,0 +1,2 @@
+sudo rabbitmqctl stop_app
+sudo rabbitmqctl start_app
