@@ -11,11 +11,11 @@ if __name__ == '__main__':
     log(f'I\'m connected to nodes {world.neighbors}')
     log(f'I have edges {world.edges}')
 
-    # if world.current_node == "2":
+    # if world.current_node == "9":
     #     log("I initiated the echo")
-    #     send_to_all_but_one(msg="echo initiate", but=-1)
+    #     send_to_all_but_one(msg="echo 9,X", but=-1)
     #     world.flag = False
-    send_to_all_but_one(f"election {world.round},{world.leaderID},{0},initiate", but=-1)
+    send_to_all_but_one(f"election {world.round},{world.leaderID},X,initiate", but=-1)
 
     try:
         world.listen()
