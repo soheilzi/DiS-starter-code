@@ -180,6 +180,7 @@ class SimulatorOnlyNeighbors(SimulatorFullView):
         self.parent = None
         self.children = self.neighbors
         self.subtree_size = 0
+        self.message_election_count = 0
 
 
 world = AbstractWorld.get_instance()

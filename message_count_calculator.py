@@ -34,9 +34,7 @@ def messages_of_node(file):
 def add_new_data(logs_directory):
     total_messages = 0
     for file in pathlib.Path(logs_directory).glob('*.stdout'):
-        print(file)
-        # if str(file).split('.')[2] == "stdout":
-        #     total_messages += messages_of_node(file)
+        total_messages += messages_of_node(file)
     return total_messages
 
 
